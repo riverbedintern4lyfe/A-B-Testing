@@ -8,7 +8,7 @@ if [[ -n "$ip" ]]; then
 			scp /etc/A-B-Testing/subprocesses/conf.d/015-horizon-testing.txt root@$machine:/etc/haproxy/conf.d 2>/dev/null
 			scp /etc/A-B-Testing/subprocesses/conf.d/175-testing.cfg root@$machine:/etc/haproxy/conf.d 2>/dev/null
 		done
-		echo "15 * * * * root /etc/A-B-Testing/subprocesses/auto_stop.sh 2>/dev/null" >> /etc/crontab
+		echo "0 * * * * root /etc/A-B-Testing/subprocesses/stop_test.sh 2>/dev/null" >> /etc/crontab
 		echo "yes" >> /etc/A-B-Testing/subprocesses/init.txt
 	fi
 	for machine in ${controllers}; do
