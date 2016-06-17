@@ -8,10 +8,10 @@
 
 # When trying to acess the "testing controller" you need to use jack D of the ethernet or RVBD wifi. 
 # Or else the your IP will be changed before connecting to HAProxy due to petfood services and your
-# traffic will also be diverted from the node. 
+# traffic will also be diverted from the controller. 
 
-# If you would like to turn off "testing mode" manually, run stop_test.sh which is found in the 
-# subprocesses folder and again pass your IP adress so that it can be removed from the whitelist.
+# If you would like to turn off "testing mode" manually, run stop_test.sh, which is found in the 
+# subprocesses folder, and again pass your IP adress so that it can be removed from the whitelist.
 
 # If you forget to turn off "testing mode" no worries! You IP will be removed from the whitelist
-# at the top of the hour after 30 min have elapsed since you began testing.
+# at the top of the hour  30 min since you began testing.
