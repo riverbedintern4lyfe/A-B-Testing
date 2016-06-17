@@ -1,0 +1,7 @@
+
+frontend horizon
+  bind 172.16.0.6:80 
+  acl is_tester src -f /etc/haproxy/tester.lst
+  use_backend tester if is_tester
+  default_backend not_tester
+
