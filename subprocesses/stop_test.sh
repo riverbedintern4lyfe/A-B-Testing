@@ -1,8 +1,13 @@
 #!/bin/bash
 
 ip_list="/etc/haproxy/tester.lst"
+remove_ip=$1
 declare -i line_number
 line_number=1
+
+if [[ -n $remove_ip ]]; then
+	sed -i -e "/$remove_ip/{N; d;}" $ip_list
+fi
 while read line; do	
 	if [[ $(($line_number%2)) == 0 ]]; then
 		time=${line:1}
