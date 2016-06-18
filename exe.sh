@@ -6,7 +6,9 @@ if [[ -n "$ip" ]]; then
 		for machine in ${controllers}; do
 			scp /etc/A-B-Testing/subprocesses/tester.lst root@$machine:/etc/haproxy/ 2>/dev/null
 			scp /etc/A-B-Testing/subprocesses/conf.d/015-horizon-testing.txt root@$machine:/etc/haproxy/conf.d 2>/dev/null
-			scp /etc/A-B-Testing/subprocesses/conf.d/175-testing.cfg root@$machine:/etc/haproxy/conf.d 2>/dev/null
+			scp /etc/A-B-Testing/subprocesses/conf.d/not_tester.txt root@$machine:/etc/haproxy/conf.d 2>/dev/null
+			scp /etc/A-B-Testing/subprocesses/conf.d/tester.txt root@$machine:/etc/haproxy/conf.d 2>/dev/null
+			ssh root@$machine 'bash -s' < /etc/A-B-Testing/subprocesses/set_config.sh 2>/dev/null
 		done
 		echo "0 * * * * root /etc/A-B-Testing/subprocesses/stop_test.sh 2>/dev/null" >> /etc/crontab
 		echo "yes" >> /etc/A-B-Testing/subprocesses/init.txt
