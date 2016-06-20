@@ -26,8 +26,8 @@ done <$ip_list
 
 # if there are no more testers, turn off testing mode
 if [[ !(-s $ip_list) ]]; then
-	mv  /etc/haproxy/conf.d/015-horizon.txt /etc/haproxy/conf.d/015-horizon.cfg 2>/dev/null
-	mv  /etc/haproxy/conf.d/015-horizon-testing.cfg /etc/haproxy/conf.d/015-horizon-testing.txt 2>/dev/null
+	mv /etc/haproxy/conf.d/015-horizon.txt /etc/haproxy/conf.d/015-horizon.cfg 2>/dev/null
+	mv /etc/haproxy/conf.d/015-horizon-testing.cfg /etc/haproxy/conf.d/015-horizon-testing.txt 2>/dev/null
 fi
 
 # restart HAProxy
