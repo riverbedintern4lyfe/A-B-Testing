@@ -1,0 +1,13 @@
+
+backend not_tester  
+  balance  source
+  capture  cookie vgnvisitor= len 32
+  cookie  SERVERID insert indirect nocache
+  mode  http
+  option  forwardfor
+  option  httpchk
+  option  httpclose
+  option  httplog
+  rspidel  ^Set-cookie:\ IP=
+  timeout  client 3h
+  timeout  server 3h
