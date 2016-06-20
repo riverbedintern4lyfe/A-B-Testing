@@ -14,4 +14,4 @@
 # subprocesses folder, and again pass your IP adress so that it can be removed from the whitelist.
 
 # If you forget to turn off "testing mode" no worries! You IP will be removed from the whitelist
-# at the top of the hour  30 min since you began testing.
+# at the top of the hour 30 min since you began testing.

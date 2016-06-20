@@ -10,7 +10,7 @@ if [[ -n "$ip" ]]; then
 	if [[ !(-s /etc/A-B-Testing/subprocesses/init.txt) ]]; then
 	
 		# copy over the needed files to the controllers, 
-		# set a cron job to removed expired ips from the testing list and make the system as initalized
+		# set a cron job to remove expired ips from the testing list and mark the system as initalized
 		for machine in ${controllers}; do
 			scp /etc/A-B-Testing/subprocesses/tester.lst root@$machine:/etc/haproxy/ 2>/dev/null
 			scp /etc/A-B-Testing/subprocesses/conf.d/015-horizon-testing.txt root@$machine:/etc/haproxy/conf.d 2>/dev/null

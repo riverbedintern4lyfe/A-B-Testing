@@ -1,5 +1,5 @@
 #!/bin/bash
-# This file removes ip adresses from the tester.lst. The causes those ips to return to normal traffic
+# This file removes ip adresses from the tester.lst. This causes those ips to return to normal traffic
 # This file also turns off testing mode if necessary.
 
 ip_list="/etc/haproxy/tester.lst"
@@ -16,7 +16,7 @@ fi
 while read line; do	
 	if [[ $(($line_number%2)) == 0 ]]; then
 		time=${line:1}
-		if [[ $(($(($( date +%s ) - $time)))) -gt 180 ]]; then
+		if [[ $(($(($( date +%s ) - $time)))) -gt 18 ]]; then
 			sed -i "$(($line_number-1)),$line_number d" $ip_list
 			line_number=$(($line_number-2))
 		fi

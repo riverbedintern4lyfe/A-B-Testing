@@ -4,7 +4,7 @@
 delcare -i counter
 counter=0
 
-# find the controlers and add then to the tester and not_tester backends
+# find the controllers and add them to the tester and not_tester backends
 grep '192.168.0' /etc/haproxy/conf.d/015-horizon.cfg | while read -r line ; do
 	if [[ $((counter)) -gt 0 ]]; then
 		echo "  $line" >> /etc/haproxy/conf.d/not_tester.txt
