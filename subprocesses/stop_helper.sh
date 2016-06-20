@@ -16,9 +16,7 @@ fi
 while read line; do	
 	if [[ $(($line_number%2)) == 0 ]]; then
 		time=${line:1}
-		temp=$(($(($( date +%s ) - $time))))
 		if [[ $(($(($( date +%s ) - $time)))) -gt 180 ]]; then
-			echo $temp
 			sed -i "$(($line_number-1)),$line_number d" $ip_list
 			line_number=$(($line_number-2))
 		fi
